@@ -32,18 +32,9 @@ There will also be a generated manifest to install without helm attached to each
 
 ## Development
 
-Install CRDs and deploy the controller:
+For developer setup and local development instructions, see [DEVELOPMENT.md](DEVELOPMENT.md).
 
-```sh
-make install
-make deploy IMG=<registry>/pocket-id-operator:tag
-```
 
-Apply a sample instance:
-
-```sh
-kubectl apply -k config/samples/
-```
 
 ## Contributing
 
