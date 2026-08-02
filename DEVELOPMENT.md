@@ -45,7 +45,17 @@ brew --version
 
 ---
 
-## 2. Install Go
+## 2. Install dev tools
+
+```bash
+brew tap justin8/dev-tap git@github.com:justin8/dev-tap.git
+brew install devtools
+devtools
+```
+
+---
+
+## 3. Install Go
 
 > [!IMPORTANT]
 > **Strict Requirement**: You **must** use Go installed via Homebrew
@@ -65,7 +75,7 @@ go version
 
 ---
 
-## 3. Local Development & Testing
+## 4. Local Development & Testing
 
 ### Run Unit Tests
 
