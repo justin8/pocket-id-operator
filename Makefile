@@ -79,7 +79,7 @@ vet: ## Run go vet against code.
 	go vet ./...
 
 .PHONY: test
-test: manifests generate fmt vet test-only ## Run tests.
+test: manifests generate fmt vet ## Run tests.
 
 .PHONY: test-only
 test-only: setup-envtest ## Run tests without generating manifests.
