@@ -46,6 +46,7 @@ brew --version
 ---
 
 ## 2. Install dev tools
+These dev tools enable the environment to successfully build. Make sure they are installed first before trying to run or build the project
 
 ```bash
 brew tap justin8/dev-tap git@github.com:justin8/dev-tap.git
