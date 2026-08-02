@@ -76,35 +76,15 @@ go version
 
 ## 4. Local Development & Testing
 
-### Run Unit Tests
+### Run Tests
 
-Run unit and integration tests locally using `envtest` (does not deploy to or modify an external cluster):
+Run all unit tests, formatting, vetting, and linting in one step:
 
 ```bash
 make test
 ```
 
-### Run End-to-End Tests
-
-Run the E2E test suite in an isolated Kind cluster:
-
-```bash
-make test-e2e
-```
-
-To tear down the Kind cluster used for E2E testing:
-
-```bash
-make cleanup-test-e2e
-```
-
-### Lint and Format Code
-
-Run code formatting and linting checks:
-
-```bash
-make fmt vet lint
-```
+This single command handles code generation, formatting (`go fmt`), vetting (`go vet`), linting (`golangci-lint`), and running all unit tests.
 
 ### Run Controller Locally
 
