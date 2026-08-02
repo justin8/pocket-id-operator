@@ -43,10 +43,17 @@ After installation completes, add Homebrew to your system `PATH` based on your o
 brew --version
 ```
 
+> [!WARNING]
+> **Skipping this step will break all subsequent steps.** All tooling in this project is installed and managed via Homebrew. Without it, nothing else can be installed or verified.
+
 ---
 
 ## 2. Install dev tools
-These dev tools enable the environment to successfully build. Make sure they are installed first before trying to run or build the project
+
+> [!IMPORTANT]
+> **You must complete this step before attempting any build, test, lint, or run command.** Skipping it will cause silent or cryptic failures in `make` targets. Do not assume this step is already done — verify it explicitly by running `devtools`.
+
+These dev tools enable the environment to successfully build. Make sure they are installed first before trying to run or build the project:
 
 ```bash
 brew tap justin8/dev-tap git@github.com:justin8/dev-tap.git
@@ -54,12 +61,23 @@ brew install devtools
 devtools
 ```
 
+### Verify
+
+```bash
+devtools
+```
+
+If the command is not found or exits with an error, the full install sequence above must be re-run before proceeding.
+
 ---
 
 ## 3. Install Go
 
 > [!IMPORTANT]
-> **Strict Requirement**: You **must** use Go installed via Homebrew
+> **Strict Requirement**: You **must** use Go installed via Homebrew. Using a system Go, a Go version manager, or a manually downloaded binary will produce unexpected behavior and is not supported.
+
+> [!WARNING]
+> **Skipping or misconfiguring this step will cause build and test failures.** If `go version` does not show a binary from `/opt/homebrew/bin/go` (Apple Silicon) or `/usr/local/bin/go` (Intel), the environment is not correctly configured.
 
 Use Homebrew to install Go:
 
@@ -73,6 +91,8 @@ Verify the installation:
 ```bash
 go version
 ```
+
+The output must reference a binary under `/opt/homebrew` or `/usr/local` depending on your architecture.
 
 ---
 
