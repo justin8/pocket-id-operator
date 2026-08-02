@@ -79,7 +79,8 @@ vet: ## Run go vet against code.
 	go vet ./...
 
 .PHONY: test
-test: manifests generate fmt vet ## Run tests.
+test: manifests generate fmt vet lint ## Run tests (includes formatting, vetting, and linting).
+	go test ./... -v
 
 
 # TODO(user): To use a different vendor for e2e tests, modify the setup under 'tests/e2e'.
